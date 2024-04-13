@@ -55,3 +55,22 @@ Process exited after 0.1731 seconds with return value 0
 Pressione qualquer tecla para continuar. . .
 
 Q4
+#include <iostream>
+using namespace std;
+int main (){
+	//Pergunta simples de matematica
+	cout << "Quanto e 6 * 7 ? "<< endl;
+	
+	int resposta;
+	cin>> resposta;
+	
+	//Verificando se a resposta está correta
+	if(resposta == 42){
+		cout<< "Parabens voce acertou"<< endl; 
+	} else {
+		cout<< "Desculpe a resposta esta errada" << endl;
+	}
+	
+	return 0;
+}
+ 
