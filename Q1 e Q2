@@ -1,0 +1,186 @@
+Q1
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+// Função que converte Celsius para Fahrenheit e retorna o resultado
+double converterParaFahrenheit(double Celsius) {
+    return (9.0/5.0) * Celsius + 32.0;
+}
+
+int main() {
+    // Definição das variáveis
+    double Celsius;
+
+    // Solicitação para o usuário inserir a temperatura em graus Celsius
+    cout << "Digite o valor em Celsius (entre 0 e 100): ";
+    cin >> Celsius;
+    
+    // Verificação do limite de Celsius
+    if (Celsius < 0 || Celsius > 100) {
+        cout << "Valor fora do intervalo permitido." << endl;
+        return 1; // Encerra o programa com erro
+    }
+    
+    // Chamada da função para converter para Fahrenheit
+    double Fahrenheit = converterParaFahrenheit(Celsius);
+    
+    // Impressão do formato tabular
+    cout << left << setw(15) << "Celsius" << setw(15) << "Fahrenheit" << endl;
+    cout << setw(15) << setprecision(2) << fixed << Celsius << setw(15) << setprecision(2) << fixed << Fahrenheit << endl;
+    
+    return 0;
+}
+Digite o valor em Celsius (entre 0 e 100): 50.44
+Celsius        Fahrenheit
+50.44          122.79
+
+--------------------------------
+Process exited after 5.134 seconds with return value 0
+Pressione qualquer tecla para continuar. . .
+
+Q2
+A
+#include <iostream>
+using namespace std;
+
+// Função para verificar se um número é primo
+bool ehPrimo(int numero) {
+    // Números menores que 2 não são primos
+    if (numero < 2) {
+        return false;
+    }
+
+    // Verifica se o número é divisível por algum número de 2 até a sua raiz quadrada
+    for (int i = 2; i * i <= numero; ++i) {
+        if (numero % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int main() {
+    int numero;
+
+    // Solicitação para o usuário inserir um número
+    cout << "Digite um numero inteiro positivo: ";
+    cin >> numero;
+
+    // Verifica se o número é primo e exibe o resultado
+    if (ehPrimo(numero)) {
+        cout << numero << " e um numero primo." << endl;
+    } else {
+        cout << numero << " nao e um numero primo." << endl;
+    }
+}
+Digite um numero inteiro positivo: 73
+73 e um numero primo.
+
+--------------------------------
+
+B
+#include <iostream>
+using namespace std;
+
+// Função para verificar se um número é primo
+bool ehPrimo(int numero) {
+    // Números menores que 2 não são primos
+    if (numero < 2) {
+        return false;
+    }
+
+    // Verifica se o número é divisível por algum número de 2 até a sua raiz quadrada
+    for (int i = 2; i * i <= numero; ++i) {
+        if (numero % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int main() {
+    cout << "Números primos de 2 a 1000:" << endl;
+
+    // Verifica e imprime todos os números primos de 2 a 1000
+    for (int i = 2; i <= 1000; ++i) {
+        if (ehPrimo(i)) {
+            cout << i << " ";
+        }
+    }
+
+    cout << endl;
+
+    return 0;
+}
+  N·meros primos de 2 a 1000:
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 101 103 107 109 113 127 131 137 139 149 151 157 163 167 173 179 18
+1 191 193 197 199 211 223 227 229 233 239 241 251 257 263 269 271 277 281 283 293 307 311 313 317 331 337 347 349 353 359 367 373 379
+383 389 397 401 409 419 421 431 433 439 443 449 457 461 463 467 479 487 491 499 
+503 509 521 523 541 547 557 563 569 571 577 587 593 599 601 607 613 617 619 631 641 643 647 653 659 661 673 677
+683 691 701 709 719 727 733 739 743 751 757 761 769 773 787 797 809 811 821 823 827 829 839 853 857 859 863 877 
+881 883 887 907 911 919 929 937 941 947 953 967 971 977 983 991 997
+
+--------------------------------
+Process exited after 0.09614 seconds with return value 0
+Pressione qualquer tecla para continuar. . .
+
+C
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+// Função para verificar se um número é primo (método 1: até n/2)
+bool ehPrimo1(int numero) {
+    if (numero < 2) {
+        return false;
+    }
+
+    for (int i = 2; i <= numero / 2; ++i) {
+        if (numero % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+// Função para verificar se um número é primo (método 2: até a raiz quadrada de n)
+bool ehPrimo2(int numero) {
+    if (numero < 2) {
+        return false;
+    }
+
+    int limite = sqrt(numero);
+    for (int i = 2; i <= limite; ++i) {
+        if (numero % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int main() {
+    cout << "Numeros primos de 2 a 1000 usando o metodo 1 (ate n/2):" << endl;
+    for (int i = 2; i <= 1000; ++i) {
+        if (ehPrimo1(i)) {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+
+    cout << "Numeros primos de 2 a 1000 usando o metodo 2 (ate a raiz quadrada de n):" << endl;
+    for (int i = 2; i <= 1000; ++i) {
+        if (ehPrimo2(i)) {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
+
+
