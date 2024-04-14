@@ -1,0 +1,109 @@
+Q5
+#include <iostream>
+using namespace std;
+
+int main() {
+    int lower_bound = 1;
+    int upper_bound = 1000;
+    int guess;
+    char response;
+
+    cout << "Pense em um numero entre 1 e 1000 e pressione Enter." << endl;
+    cout << "Eu vou tentar adivinhar o numero em ate 7 perguntas." << endl;
+    cout << "Responda com '<' se o numero que voce pensou for menor," << endl;
+    cout << "'>' se for maior, e '=' se eu acertar." << endl;
+    cout << "Pressione Enter para começar...";
+    cin.get(); // Aguarda o usuário pressionar Enter para começar
+
+    while (true) {
+        guess = lower_bound + (upper_bound - lower_bound) / 2; // encontra o número no intervalo
+        cout << "O numero que voce pensou e " << guess << "?" << endl;
+        cout << "Responda com '<', '>', ou '=': ";
+        cin >> response;
+
+        if (response == '=') {
+            cout << "Eu acertei!" << endl;
+            break;
+        } else if (response == '<') {
+            upper_bound = guess - 1; // limite superior
+        } else if (response == '>') {
+            lower_bound = guess + 1; // limite inferior
+        }
+
+        if (lower_bound > upper_bound) {
+            cout << "Voce trapaceou! Nao ha numeros dentro do intervalo fornecido." << endl;
+            break;
+        }
+    }
+    return 0;
+}
+Pense em um numero entre 1 e 1000 e pressione Enter.
+Eu vou tentar adivinhar o numero em ate 7 perguntas.
+Responda com '<' se o numero que voce pensou for menor,
+'>' se for maior, e '=' se eu acertar.
+Pressione Enter para comeþar...
+O numero que voce pensou e 500?
+Responda com '<', '>', ou '=': >
+O numero que voce pensou e 750?
+Responda com '<', '>', ou '=': >
+O numero que voce pensou e 875?
+Responda com '<', '>', ou '=': <
+O numero que voce pensou e 812?
+Responda com '<', '>', ou '=': <
+O numero que voce pensou e 781?
+Responda com '<', '>', ou '=': >
+O numero que voce pensou e 796?
+Responda com '<', '>', ou '=': >
+O numero que voce pensou e 804?
+Responda com '<', '>', ou '=': <
+O numero que voce pensou e 800?
+Responda com '<', '>', ou '=': =
+Eu acertei!
+
+--------------------------------
+Process exited after 15.39 seconds with return value 0
+Pressione qualquer tecla para continuar. . .
+
+Q6 
+#include <iostream>
+using namespace std;
+
+void torresDeHanoi(int n, char estacaInicial, char estacaDestino, char estacaTemporaria) {
+    if (n == 1) {
+        cout << estacaInicial << "-" << estacaDestino << endl;
+        return;
+    }
+    torresDeHanoi(n - 1, estacaInicial, estacaTemporaria, estacaDestino);
+    cout << estacaInicial << "-" << estacaDestino << endl;
+    torresDeHanoi(n - 1, estacaTemporaria, estacaDestino, estacaInicial);
+}
+
+int main() {
+    int n;
+    cout << "Digite o número de discos: ";
+    cin >> n;
+    cout << "Instruções para resolver o problema das Torres de Hanoi:" << endl;
+    torresDeHanoi(n, '1', '3', '2');
+    return 0;
+}
+Digite o numero de discos: 4
+Instruþ§es para resolver o problema das Torres de Hanoi:
+1-2
+1-3
+2-3
+1-2
+3-1
+3-2
+1-2
+1-3
+2-3
+2-1
+3-1
+2-3
+1-2
+1-3
+2-3
+
+--------------------------------
+Process exited after 5.177 seconds with return value 0
+Pressione qualquer tecla para continuar. .
