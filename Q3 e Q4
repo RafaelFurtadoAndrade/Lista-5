@@ -57,20 +57,38 @@ Pressione qualquer tecla para continuar. . .
 Q4
 #include <iostream>
 using namespace std;
-int main (){
-	//Pergunta simples de matematica
-	cout << "Quanto e 6 * 7 ? "<< endl;
-	
-	int resposta;
-	cin>> resposta;
-	
-	//Verificando se a resposta está correta
-	if(resposta == 42){
-		cout<< "Parabens voce acertou"<< endl; 
-	} else {
-		cout<< "Desculpe a resposta esta errada" << endl;
-	}
-	
-	return 0;
+
+int main() {
+    // Pergunta 1 de matemática
+    cout << "Quanto e 6 * 7? " << endl;
+    int resposta;
+    cin >> resposta;
+
+    // Verificando se a resposta está correta
+    if (resposta == 42) {
+        cout << "Muito bom!" << endl;
+    } else {
+        cout << "Nao. Por favor, tente novamente." << endl;
+    }
+
+    // Pergunta 2 de matemática
+    cout << "Quanto e 6 * 6 / 3 - 2? " << endl;
+    int resposta2;
+    cin >> resposta2;
+
+    // Verificando se a resposta está correta
+    if (resposta2 == 10) {
+        cout << "Muito bom!" << endl;
+    } else {
+        cout << "Nao. Por favor, tente novamente." << endl;
+    }
+
+    return 0;
 }
- 
+Quanto e 6 * 7 ?
+41
+Desculpe a resposta esta errada
+
+--------------------------------
+Process exited after 5.034 seconds with return value 0
+Pressione qualquer tecla para continuar. . .
