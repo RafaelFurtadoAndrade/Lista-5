@@ -1,0 +1,28 @@
+Q1
+#include <iostream>
+using namespace std;
+int main (){
+	float peso,excesso,multa;
+	
+	const float limite=50;
+	
+	cout<<("Digite o peso em kg dos peixes pescados: ");
+	cin>>peso;
+	
+	if (peso>limite){
+		excesso= peso- limite;
+		multa= excesso*4;
+		
+		cout<<"Peso em excedente: "<<excesso<<"kg"<<endl;
+		cout<<"voce tera que pagar uma multa de : R$"<<multa<<endl;
+		 
+	}
+	else{
+		cout<<"peso dentro do limite permitido: "<<endl;
+	}
+	
+	
+	return 0;
+	
+	
+}
