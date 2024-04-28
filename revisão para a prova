@@ -22,7 +22,27 @@ int main (){
 	}
 	
 	
-	return 0;
-	
-	
+	return 0;	
 }
+Q2
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+   float Tarquivo,Vdolink,Tarquivomegabits,TD;
+   cout<<("Digite o tamanho do arquivo (em MB) : ");
+   cin>>Tarquivo;
+   
+   cout<<("Digite a velocidade do arquivo(em Mbps) : ");
+   cin>> Vdolink;
+   
+   Tarquivomegabits=Tarquivo*8;
+   TD=Tarquivomegabits/Vdolink;
+   
+   cout<<("O tempo de download e igual a ")<<TD<<"s"<<endl;
+   
+   return 0;
+   
+   
+	}
