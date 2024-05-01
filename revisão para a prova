@@ -24,26 +24,40 @@ else{
 }
 Q2
 #include <iostream>
-#include <cmath>
 using namespace std;
-
-int main() {
-   float Tarquivo,Vdolink,Tarquivomegabits,TD;
-   cout<<("Digite o tamanho do arquivo (em MB) : ");
-   cin>>Tarquivo;
-   
-   cout<<("Digite a velocidade do arquivo(em Mbps) : ");
-   cin>> Vdolink;
-   
-   Tarquivomegabits=Tarquivo*8;
-   TD=Tarquivomegabits/Vdolink;
-   
-   cout<<("O tempo de download e igual a ")<<TD<<"s"<<endl;
-   
-   return 0;
-   
-   
+int main (){
+	int valorsaque;
+	cout<<("Digite o valor do saque entre 10 e 600: ");
+	cin>> valorsaque;
+	if(valorsaque<10){
+		cout<<("valor invalido")<<endl;
 	}
+	else if(valorsaque>600){
+		cout<<("valor invalido")<<endl;
+	}
+	int notas100 = valorsaque / 100;
+    valorsaque %= 100;
+    int notas50 = valorsaque / 50;
+    valorsaque %=50;
+    int notas20 = valorsaque / 20;
+    valorsaque %=20;
+    int notas10 = valorsaque / 10;
+    valorsaque %=10;
+    int notas5 = valorsaque / 5;
+    valorsaque %=5;
+    int notas2 = valorsaque / 2;
+    valorsaque %=2;
+    int notas1 = valorsaque / 1;
+    
+    cout<<("notas fornecidas")<<endl;
+    cout<<("notas de 100 reais:")<<"R$"<<notas100<<endl;
+    cout<<("notas de 50 reais:")<<"R$"<<notas50<<endl;
+    cout<<("notas de 20 reais:")<<"R$"<<notas20<<endl;
+    cout<<("notas de 10 reais:")<<"R$"<<notas10<<endl;
+    cout<<("notas de 5 reais:")<<"R$"<<notas5<<endl;
+    cout<<("notas de 2 reais:")<<"R$"<<notas2<<endl;
+    cout<<("notas de 1 real:")<<"R$"<<notas1<<endl;
+}
 Q3
 #include <iostream>
 
