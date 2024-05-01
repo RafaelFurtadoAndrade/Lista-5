@@ -113,3 +113,33 @@ int main (){
 	cout<<"O triangulo e escaleno"<<endl;
 
 }
+Q5
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void calcularbhaskara(double a, double b, double c) {
+    double delta = b * b - 4 * a * c;
+    if (delta > 0) {
+        double raiz_delta = sqrt(delta);
+        double raiz1 = (-b + raiz_delta) / (2 * a);
+        double raiz2 = (-b - raiz_delta) / (2 * a);
+        cout << "A raiz 1 é igual a " << raiz1 << endl;
+        cout << "A raiz 2 é igual a " << raiz2 << endl;
+    } else if (a == 0) {
+        cout << "Não é possível fazer uma equação de segundo grau." << endl;
+    } else if (delta < 0) {
+        cout << "A equação não possui raízes reais." << endl;
+    } else if (delta == 0) {
+        double raiz = -b / (2 * a);
+        cout << "A equação possui apenas uma raiz, que é " << raiz << endl;
+    }
+}
+
+int main() {
+    double a, b, c;
+    cout << "Digite o valor de a, b e c para a equação de Bhaskara: ";
+    cin >> a >> b >> c;
+    calcularbhaskara(a, b, c);
+    return 0;
+}
