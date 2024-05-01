@@ -155,3 +155,29 @@ int main() {
     calcularbhaskara(a, b, c);
     return 0;
 }
+Q5
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int arredondar(double numero) {
+    int numeroArredondado = round(numero);
+    return numeroArredondado;
+}
+
+int main() {
+    double numero;
+    cout << "Digite um número inteiro ou decimal: ";
+    cin >> numero;
+
+    int numeroArredondado = arredondar(numero);
+
+    // Comparar se o número original e o número arredondado são iguais
+    if (numero == static_cast<double>(numeroArredondado)) {
+        cout << "O número é inteiro: " << numero << endl;
+    } else {
+        cout << "O número é decimal: " << numero << endl;
+    }
+
+    return 0;
+}
