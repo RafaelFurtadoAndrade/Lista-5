@@ -181,3 +181,50 @@ int main() {
 
     return 0;
 }
+Q6
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int count = 0;
+    string resposta;
+
+    cout << "responda com sim ou nao: " << endl;
+    cout << "Telefonou para a vitima? ";
+    cin >> resposta;
+    if (resposta == "sim")
+        count++;
+
+    cout << "Esteve no local do crime?" << endl;
+    cin >> resposta;
+    if (resposta == "sim")
+        count++;
+
+    cout << "Mora perto da vitima?" << endl;
+    cin >> resposta;
+    if (resposta == "sim")
+        count++;
+
+    cout << "Devia para a vitima?" << endl;
+    cin >> resposta;
+    if (resposta == "sim")
+        count++;
+
+    cout << "Ja trabalhou com a vitima?" << endl;
+    cin >> resposta;
+    if (resposta == "sim")
+        count++;
+
+    cout << endl;
+
+    if (count == 2) {
+        cout << "Suspeita" << endl;
+    } else if (count <= 4 || count == 3) {
+        cout << "Cumplice" << endl;
+    } else if (count == 5) {
+        cout << "Assassino" << endl;
+    }
+
+    return 0;
+}
